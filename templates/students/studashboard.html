@@ -1,0 +1,38 @@
+{% extends 'students/base.html' %} {% load static %} {% block content %}
+<ul>
+  <li><a href="#">About Us</a></li>
+  <li><a href="/logout/">Logout</a></li>
+  <li><a href="http://127.0.0.1:8000/">Home</a></li>
+</ul>
+<div class="details">
+  <h1>WELCOME TO STUDENTS DASHBOARD</h1>
+  <table style="width: 100%">
+    <tr>
+      <th><h3>Student id</h3></th>
+      <th><h3>First Name</h3></th>
+      <th><h3>Last Name</h3></th>
+      <th><h3>Profile Pic</h3></th>
+      <th><h3>Username</h3></th>
+      <th><h3>Email</h3></th>
+      <th><h3>Address</h3></th>
+      <th><h3>City</h3></th>
+      <th><h3>Profession</h3></th>
+    </tr>
+    {% for i in studetails %}
+    <tr>
+      <td><h5>{{i.id}}</h5></td>
+      <td><h5>{{i.fname}}</h5></td>
+      <td><h5>{{i.lname}}</h5></td>
+      <td>
+        <img src="{{i.profile_pic.url}}" alt="" height="50%" width="50%" />
+      </td>
+      <td><h5>{{i.username}}</h5></td>
+      <td><h5>{{i.email}}</h5></td>
+      <td><h5>{{i.address}}</h5></td>
+      <td><h5>{{i.city}}</h5></td>
+      <td><h5>{{i.usertype}}</h5></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock %}

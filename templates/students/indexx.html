@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <h1>Hello Guys</h1>
+    <header class="header">
+      <div class="container container--narrow">
+        <a href="/" class="header__logo">
+          <img src="images/logo.svg" alt="DevSearch Logo" />
+        </a>
+        <nav class="header__nav">
+          <input type="checkbox" id="responsive-menu" />
+          <label for="responsive-menu" class="toggle-menu">
+            <span>Menu</span>
+            <div class="toggle-menu__lines"></div>
+          </label>
+          <ul class="header__menu">
+            <li class="header__menuItem"><a href="#">About Us</a></li>
+            <li class="header__menuItem"><a href="/login/">Login</a></li>
+            <li class="header__menuItem"><a href="/registers/">Register</a></li>
+            <li class="header__menuItem"><a href="http://127.0.0.1:8000/">Home</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  
+    <!-- Main Section -->
+    <main class="home">
+      <section class="hero-section text-center">
+        <div class="container container--narrow">
+          <div class="hero-section__box">
+            <h2>CONNECT WITH <span>DEVELOPERS</span></h2>
+            <h2>FROM AROUND THE WORLD</h2>
+          </div>
+  
+          <div class="hero-section__search">
+            <form class="form" action="#" method="get">
+              <div class="form__field">
+                <label for="formInput#search">Search Developers </label>
+                <input class="input input--text" id="formInput#search" type="text" name="text"
+                  placeholder="Search by developer name" />
+              </div>
+  
+              <input class="btn btn--sub btn--lg" type="submit" value="Search" />
+            </form>
+          </div>
+        </div>
+      <script src="{% static 'js/bootstrap.js'%}"></script>
+      <script src="{% static 'js/jquery.js'%}"></script>
+      <script src="{% static 'js/popper.js'%}"></script>
+  </body>
+</html>
