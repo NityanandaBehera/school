@@ -11,7 +11,9 @@ urlpatterns = [
     path('test/', test, name='testing'),
     path('Studash/', Studash, name='Studashboard'),
     path('Teacherdash/', Teacherdash, name='Teacherdashboard'),
-    path('logout/', logoutend, name='logoutall')
+    path('logout/', logoutend, name='logoutall'),
+    path('stulist/', Stulist, name='stulist'),
+
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

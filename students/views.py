@@ -88,3 +88,8 @@ def Teacherdash(request):
 
 def logoutend(request):
     return render(request, 'students/login.html')
+
+
+def Stulist(request):
+    context = {'studetails': UserDetNew.objects.all()}
+    return render(request, 'students/stulist.html', context)
