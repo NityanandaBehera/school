@@ -22,4 +22,27 @@ class UserDetNew(models.Model):
     state = models.CharField(max_length=20)
     pincode = models.IntegerField()
     usertype = models.CharField(max_length=20, choices=c)
+
+    def __str__(self):
+        return self.usertype
 # Create your models here.
+
+
+class Stud(models.Model):
+    user = models.ForeignKey(UserDetNew, on_delete=models.CASCADE)
+    stu_name = models.CharField(max_length=100)
+    stu_email = models.CharField(max_length=100)
+    stu_profilepic = models.ImageField(upload_to="images")
+    stu_address = models.CharField(max_length=200)
+
+
+class Teachers(models.Model):
+    user = models.ForeignKey(UserDetNew, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    profile_pic = models.ImageField(upload_to="images")
+    address = models.CharField(max_length=120)
+    qualification = models.CharField(max_length=23)
+
+    def __str__(self):
+        return self.name

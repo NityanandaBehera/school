@@ -1,0 +1,27 @@
+{% extends 'students/base.html' %}{% load static %} {% block content %}
+<div class="details">
+  <h1>Our students are our pride</h1>
+  <table style="width: 100%">
+    <tr>
+      <th><h3>Teacher id</h3></th>
+      <th><h3>Teacher Name</h3></th>
+      <th><h3>Teacher Email</h3></th>
+      <th><h3>Profile Pic</h3></th>
+      <th><h3>Address</h3></th>
+      <th><h3>qualification</h3></th>
+    </tr>
+    {% for i in teachersdetails %}
+    <tr>
+      <td><h5>{{i.id}}</h5></td>
+      <td><h5>{{i.name}}</h5></td>
+      <td><h5>{{i.email}}</h5></td>
+      <td>
+        <img src="{{i.profile_pic.url}}" alt="" height="50%" width="50%" />
+      </td>
+      <td><h5>{{i.address}}</h5></td>
+      <td><h5>{{i.qualification}}</h5></td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
+{% endblock content %}

@@ -13,6 +13,8 @@ urlpatterns = [
     path('Teacherdash/', Teacherdash, name='Teacherdashboard'),
     path('logout/', logoutend, name='logoutall'),
     path('stulist/', Stulist, name='stulist'),
+    path('teacherlist/', Teacherslist, name='teacherlist'),
+    path('alluserslist/', Alluserslist, name='alluserslist'),
 
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

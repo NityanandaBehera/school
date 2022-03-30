@@ -90,6 +90,16 @@ def logoutend(request):
     return render(request, 'students/login.html')
 
 
+def Alluserslist(request):
+    context = {'alluserdetails': UserDetNew.objects.all()}
+    return render(request, 'students/alluserslist.html', context)
+
+
 def Stulist(request):
-    context = {'studetails': UserDetNew.objects.all()}
+    context = {'studetails': Stud.objects.all()}
     return render(request, 'students/stulist.html', context)
+
+
+def Teacherslist(request):
+    context = {'teachersdetails': Teachers.objects.all()}
+    return render(request, 'students/teacherlist.html', context)
