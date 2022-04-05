@@ -23,6 +23,7 @@ def registers(request):
         temppass = request.POST['pass']
         password = request.POST['password']
         address = request.POST['address']
+        country = request.POST['country']
         city = request.POST['city']
         state = request.POST['state']
         pincode = request.POST['pincode']

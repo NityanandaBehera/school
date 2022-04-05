@@ -1,15 +1,41 @@
-{% extends 'students/base.html' %} {% load static %} {% block content %}
-<ul>
-  <li><a href="#">About Us</a></li>
-  <li><a href="/login/">Login</a></li>
-  <li><a href="/registers/">Register</a></li>
-  <li><a href="http://127.0.0.1:8000/">Home</a></li>
-</ul>
-<br /><br /><br />
+{% extends 'students/base.html' %} {% load static %} {% block content %} {%load
+social_share%}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login/">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/registers/">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <div class="container-fluid">
   <div class="row">
     <div class="column">
-      <h1>WELCOME TO DCS!!!</h1>
+      <h1 class="ts">WELCOME TO DCS!!!</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -31,9 +57,22 @@
         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
         proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-      <button><a href="/stulist/" />student Details</button>
-      <button><a href="/teacherlist/" />Teachers Details</button>
-      <button><a href="/alluserslist/" />Allusers Details</button>
+      <button type="button" class="btn btn-primary">
+        <a href="/stulist/" />student Details
+      </button>
+      <button type="button" class="btn btn-secondary">
+        <a href="/teacherlist/" />Teachers Details
+      </button>
+      <button type="button" class="btn btn-success">
+        <a href="/alluserslist/" />Allusers Details
+      </button>
+    </div>
+    <div>
+      <h5>Django social share</h5>
+      {% post_to_twitter object_or_url "<i class="fab fa-twitter"></i>" %} {%
+      post_to_linkedin object_or_url %} {% post_to_whatsapp object_or_url "Share
+      via WhatsApp" %} {% send_email object.title "New Song: {{object.title}}.
+      Check it out!" object_or_url "Share via email" %}
     </div>
     <div class="column">
       <img

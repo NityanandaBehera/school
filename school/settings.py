@@ -39,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'students',
+    'django_countries',
+    'django_social_share',
+
 ]
 
 MIDDLEWARE = [

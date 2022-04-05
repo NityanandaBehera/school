@@ -1,6 +1,7 @@
 from email.policy import default
 from xml.parsers.expat import model
 from django.db import models
+#from django_countries.fields import CountryField
 
 # Create your models here.
 
@@ -18,6 +19,7 @@ class UserDetNew(models.Model):
     email = models.EmailField(max_length=254, unique=True)
     password = models.CharField(max_length=200)
     address = models.CharField(max_length=20)
+    #country = CountryField()
     city = models.CharField(max_length=20)
     state = models.CharField(max_length=20)
     pincode = models.IntegerField()
